@@ -1,0 +1,94 @@
+*{margin: 0; padding: 0;}
+
+/* 
+padding:상하좌우
+padding:10px(padding-top:10px, padding-right:10px, padding-left:10px, padding-bottom:10px
+padding:10px 20px; 위아래 좌우
+padding:10px 20px 30px; 위 아래 좌우
+padding:10px 20px 30px 40px; 위 우 아래 좌 
+*/
+
+/* 
+아이디를 호출하는 방법
+앞에 #을 적고 뒤에 이름 적는다. 
+ID란? 전체 사이트에서 이름이 유일해야 한다.(XX반복되지 말아야 하고, 같은 이름이 있어서도 안된다.XX)
+ID가 2개 이상 되면 안된다. (EX : ID="조상 조상2" X )
+단, class로 같은 이름이 있는것은 된다. ( EX : ID="조상" class="조상") 
+*/
+
+
+
+/* 
+태그에는 3가지 요소가 있다.
+1. block -- 부모의 넓이를 모두 차지, 공간의 개념이 있다.
+2. inline -- block 요소 안에 글자와 같은 성질을 가지는 요소, 공간의 개념이 없다. (width:x 를 주어도 너비가 없기 때문에 아무런 효과가 없다.)
+3. inline-block -- block 요소 안에 글자와 같은 성질, 공간의 개념을 가지고 있다.
+*/
+
+.약::after{content:""; clear:both; display: block;}
+/* ❗❗❗❗ 중요하니 꼭꼭 외워두기 ❗❗❗❗ */
+
+#조상{}
+#조상 .첫째{background-color: cadetblue;}
+
+#조상 .둘째{background-color: chocolate;}
+/* ::before,::after는 css에서 만드는 가상의 공간이며, 
+inline 성질을 가진다. content: "";와 반드시 같이 공존한다. */
+#조상 .둘째::before{content: "💌"; background-color: violet;}
+#조상 .둘째::after{content: "💌";background-color: lavender;}
+#조상 .둘째 em{background-color: crimson;}
+
+#조상 .셋째 {background-color: cornflowerblue; margin-top: 50px; width: 1000px;
+    margin-left: auto; margin-right: auto;
+}
+#조상 .셋째 .세일{background-color: lightskyblue; width: 300px;
+    float: left;
+}
+#조상 .셋째 .세이{background-color: bisque;width: 300px;
+    float: left;
+}
+#조상 .셋째 .세삼{background-color:mediumaquamarine; width: 300px;
+    float: left;
+}
+
+
+
+#조상 .넷째 {background-color:dimgray; 
+    width: 1245px;
+    /* margin-top: 50px;
+    margin-left: auto; 
+    margin-right: auto;
+    위를 한 줄로 줄이면 아래와 같이 바꿀 수 있다.
+    margin: 위 좌우 아래; */
+    margin: 50px auto 0;
+}
+
+#조상 .넷째 .child{width: 300px; height: 200px; 
+    float: left; margin-right: 15px;
+    text-align: center;
+    /* tac(↑) 글자를 가운데로 정렬해라 */
+    line-height: 200px;
+    /* line-height는 행간을 가운데로 정렬한다.
+    즉, 해당 박스의 높이가 200px이여서 반인 100px 높이에 위치하게 된다. */
+    font-size: 25px;
+    /* 글자의 크기를 말한다.(기본값 16px)
+    대부분 10px 아래로 만들지 않는다.*/
+    font-weight: bold;
+    /* 글자의 두께를 말한다. */
+}
+
+#조상 .넷째 .네일 {background-color:#D9984A;
+background-image: url(../img/1.png) ;}
+#조상 .넷째 .네이 {background-color:#BF8D7A;
+background-image: url(../img/2.png);}
+#조상 .넷째 .네삼 {background-color:#D9B4A7;
+background-image: url(../img/3.png);
+transition:0.3s;}
+/* transition:0.3s; 화면 전환시 부드럽게 바뀐다. */
+#조상 .넷째 .네삼:hover{
+    background-image: url(../img/4.png);
+}
+/* hover 기능? 마우스를 갖다대면 해당 링크의 이미지로 변경이 된다.
+transition 기능? */
+#조상 .넷째 .네사 {background-color:#A63333; margin-right: 0;
+background-image: url(../img/4.png);} 

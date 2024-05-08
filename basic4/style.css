@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+/* 🚩🚩 float 약 */
+.효자::after{content: ""; clear:both; display: block;}
+
+/* 🚩🚩 제목 */
+h1{background-color:deeppink; text-align: center;
+  color: #fff;
+}
+
+/* 🚩🚩 제목을 제외한 아래를 다 포괄하는 전체 */
+.전체{background-color:antiquewhite; width: 1200px;
+margin: 50px auto 0;
+padding: 50px 0; box-sizing: border-box;
+}
+
+/* 🚗 첫째 시작 ==3 */
+.전체 .첫째{width: 1000px; background-color:lightcoral;
+    margin: 0 auto 60px;
+}
+.전체 .첫째 .child{}
+
+/* 🚩🚩 첫째중 동영상을 잡고 있는 요소 */
+.전체 .첫째 .첫일{width: 21.25%; background-color: lightskyblue;
+    float: left; height: 200px; margin-right: 5%;
+position: relative;
+}
+
+.전체 .첫째 .첫일 iframe{
+    position: absolute; left: 0; top: 0;
+    width: 100%; height: 100%;
+}
+/* 너비/높이를 100%를 함으로써 크기를 맞춘다. */
+
+
+/* 🚩🚩 첫째중 설명글 요소 */
+.전체 .첫째 .첫이{
+    position: relative;
+    width: 21.25%; background-color: lightskyblue;
+    float: left; height: 200px; margin-right: 5%;}
+
+    .전체 .첫째 .첫이 .center{background-color: black;
+    color: #fff; width: 100px; text-align: center;
+    padding: 10px 0; border-radius: 20px;
+    /* border-radius란? 사각형의 꼭지점을 둥글게 깎는다. */
+
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* transform: translate(x값, y값); 으로 움직인다.
+    transform: translate(10px, 10px);
+    🚀🚀 %값으로 주면 %의 기준이 자기자신이다.
+    transform: translate(-50%, -50%); */
+}
+
+/* 🚩🚩 첫째중 부산광역시 홈페이지 잡고있는 요소 */
+.전체 .첫째 .첫삼{
+    position: relative;
+    width: 21.25%; background-color: lightskyblue;
+    float: left; height: 200px; margin-right: 5%;
+}
+.전체 .첫째 .첫삼 iframe{
+    width: 200px; height: 150px; 
+    position: absolute; 
+    left: 50%; /* %의 기준--부모의 넓이 */ top: 50%;/* %의 기준--부모의 높이 */
+    transform: translate(-50%, -50%);
+    /* transform: translate(%의 기준--자신의 넓이, %의 기준--자신의 높이); */
+    /* margin,padding에서 사용하는 % ---> 부모의 넓이 */
+}
+
+/* 🚩🚩 첫째중 구글 지도를 잡고있는 요소 */
+.전체 .첫째 .첫사{
+    position: relative;
+    width: 21.25%; background-color: lightskyblue;
+    float: left; height: 200px;}
+
+.전체 .첫째 .첫사 iframe{position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; height: 190px;
+}
+
+
+/* 🚗 둘째 시작 ==3 */
+.전체 #둘째 {width: 1000px; background-color: blueviolet;
+margin: 50px auto 0;
+padding: 20px;
+box-sizing: border-box;
+}
+.전체 #둘째 .child {width: 45%; 
+    background-color:brown;
+    float: left; height: 300px;
+}
+
+/* 🚩🚩 백그라운드 이미지 표현/효과 💖 자주 쓰는 명령어 💘 */
+.전체 #둘째 .둘일{
+    background-image: url(https://dimg.donga.com/wps/NEWS/IMAGE/2024/01/23/123180288.2.jpg) ;
+    background-size: cover;
+    /* 이미지 사이즈를 해당 요소의 너비에 맞춰서 나온다.
+    cover ==> cantain 이미지 전체를 무조건 다 나오게 한다. 빈 공간은 반복되게 나온다. (바둑알)
+    background-repeat: no-repeat; ==> 이미지를 한번만 나와라, 반복하지마라! */
+    background-position: center;
+    /* background-position: x, y 축
+    center만 작성시 x,y축 모두 center에 위치한다. 
+    백그라운드의 위치를 변경해준다.*/
+    margin-right: 10%;
+    position: relative;
+    overflow: hidden;
+    /* 마우스를 갖다대면 닫히는 효과를 주었으나, 요소가 바깥으로 나와있었다.
+    해당 명령어로 바깥으로 튀어나간 요소가 가려졌다. */
+}
+.전체 #둘째 .둘일 .text{
+    position: absolute; 
+    left: -100%; top: 0; 
+    /* bottom: 0; right: 0; */
+    /* 아래와 같은 말, 가득 채운다는 말. */
+    width: 100%; height: 100%;
+    background-color:rgba(255, 255, 255, 0.2);
+    /* 기존 숫자는 255,255,255
+    투명도 조절을 위해 0.2 추가했다. */
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+    /* 바뀔때 약간의 시간을 두는것. --> 부드럽게 움직인다. */
+}
+
+.전체 #둘째 .둘일:hover .text { left: 0;}
+/* 왼쪽 0의 위치에 있다가 hover 효과 주기.
+백그라운드(이미지) 영역에 hover 효과를 주어야 한다. */
+
+/* .전체 #둘째 .둘일:hover .text{opacity: 0;} */
+/* 투명도 설정, 0으로 할 경우 아예 보이지 않음.
+:hover와 함께 할 경우, 화면 전환 효과 */
+
+.전체 #둘째 .둘일 .text .center {
+    position: absolute; 
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: lightsteelblue;
+    color: darkolivegreen;
+    padding: 5px 20px;
+    border-radius: 20px;
+    /* 박스를 둥글게 만든다. */
+}
+
+.전체 #둘째 .둘이{
+    position: relative;
+    background-image: url(https://www.100ssd.co.kr/news/photo/202201/84221_64328_1915.jpg);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+
+.전체 #둘째 .둘이 .text {
+    position: absolute;
+    left: 0; bottom: -60px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    transition: 0.3s;
+}
+
+.전체 #둘째 .둘이:hover .text {bottom: 0;}

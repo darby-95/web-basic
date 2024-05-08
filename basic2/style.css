@@ -1,0 +1,40 @@
+
+
+*{margin: 0; padding: 0;}
+
+.position{
+
+    width: 500px; 
+    background-image: url(https://manual.notch.one/0.9.23/en/docs/nodes/generators/grid/img/node-generators-grid-img.jpg);
+    margin-left: 10%; margin-top: 10%;
+    position: relative;
+    margin-bottom: 2000px;
+}
+
+.position .red{width: 100px; height: 100px; 
+    background-color: red;
+    /* 나의 머리와 부모의 머리 사이에 100px 이라는 공간이 생겼다. */
+    top: 100px;
+    left: 200px; 
+    position: relative;
+    /* relative : 기존에 있던 위치(입력한 값에 있는 원위치)를 기준으로 움직인다.
+       어느곳이든 움직이더라도 다른 요소들의 위치에 아무런 변화를 주지 않는다./
+
+    /* 오른쪽으로 가려면,
+    (부모를 기준) 왼쪽의 공간을 200px 줄 경우, 오른쪽으로 200px 움직인다. */
+}
+
+.position .blue{ width: 100px; height: 100px;
+    background-color: blue;
+    position: absolute;
+    /* 죽은상태, 전체 페이지를 기준으로 움직인다. */
+    left: 50px; top: 50px;
+}
+
+.position .green{width: 100px; height: 100px;
+    background-color: green;
+    position: fixed;
+    /* 죽은상태, 스크롤을 올리고 내려도 항상 그 자리에 고정되어 붙어있는 상태. */
+    right: 0;
+    top: 100px;
+}

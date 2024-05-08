@@ -1,0 +1,16 @@
+#이조상>div {padding-left: 50px;}
+#이조상>div.이지만 {background-color: blue;}
+#이조상>div.이지만 .막내 {background-color: lightgreen;}
+#이조상>div.이지만>div {padding-left: 50px;}
+#이조상>div.이서윤>div {padding-left: 50px;}
+
+
+#이조상 .이지만 {border: 2px solid red;}
+/* #이조상 .이소아 {border: 2px solid green;} */
+#이조상>div.이지만 {border: 2px solid pink;}
+#이조상>div .이지만 {border: 2px solid pink;}
+
+
+/* 
+> 내 바로 밑의 부하
+띄어쓰기 : 내 부하들 전부 */

@@ -1,0 +1,53 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+.sp1 {
+    position: static;
+    width: 400px; height: 50px;
+    background-color: #a5dd9b;
+    /* top: 100px; */
+    /* static(기본값)을 적용하여 top이 적용되지 않는다. */
+    z-index: 10;
+    position: relative;
+    /* z-index란? 3D로 봤을때, 겹치는 요소중 (Z축으로)앞으로 빼낼 수 있다.
+    position을 적용해주어야한다. */
+}
+.sp2 {
+    width: 400px; height: 50px;
+    background-color: darkblue;
+    position: relative;
+    left: 30px; top: -10px;
+}
+.sp3 {
+    width: 400px; height: 50px;
+    background-color: lightcoral
+}
+
+
+
+
+.absolute{}
+
+.absolute .owner {
+    background-color: lightseagreen;
+    position: relative;
+}
+.absolute .owner .pet {
+    width: 400px; height: 50px;
+}
+.absolute .owner .ap1 {background-color: orangered;
+    position: absolute;
+    /* 죽었다. */
+    left: 30px; top: 70px;
+    z-index: 30;
+}
+/* 절대위치인 (absolute)를 잡아줄 수 있는 부모인 owner가 포지션을 잡고 있어서 부모를 기준으로 포지션을 잡았다.
+owner가 포지션을 잡지 않을 경우, 조부모/증조부모 등 위로 타고가다 아무도 안가지고 있는다면 body를 기준점으로 삼는다. */
+.absolute .owner .ap2 {background-color: yellow;}
+
+
+
+.absolute .owner2 {
+    background-color:dodgerblue;
+    height: 50px;
+}
